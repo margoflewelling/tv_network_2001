@@ -10,18 +10,18 @@ class Network
     @shows << show_name
   end
 
-  def main_characters
-    @main_characters_list = []
-    @shows.map do |show|
-    show.characters.map do |character|
-    if character.salary > 500000 && no_lower_case(character)
-      @main_characters_list << character
+
+  def all_characters
+    all_char = []
+    @shows.each do |show|
+    all_char << show.characters
     end
-    end
-    end
-    @main_characters_list.compact
+    all_char.flatten
   end
 
+  def main_characters
+    all_characters.find_all {|character| character.salary > 500000 && no_lower_case(character)}
+  end
 
   def no_lower_case(character)
     character.name == character.name.upcase
