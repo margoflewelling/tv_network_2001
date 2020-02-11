@@ -28,8 +28,13 @@ class Network
   end
 
 
-end
+  def actors_by_show
+    actors = {}
+    @shows.each do |show|
+      actors[show] = show.actors
+      actors
+    end
+    actors
+  end
 
-# A character is a main character for the network
-#  if their salary is greater than 500_000 and
-#    their character name has no lowercase letters.
+end
