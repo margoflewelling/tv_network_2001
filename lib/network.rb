@@ -37,4 +37,11 @@ class Network
     actors
   end
 
+  # def shows_by_actor
+  #   reduce ({}) do |shows_by_actor, actor|
+  #   if shows_by_actor.has_key?(actor)
+  #     shows_by_actor[actor] << actor
+  #   else
+  #     shows_by_actor[actor] = show
+
 end
